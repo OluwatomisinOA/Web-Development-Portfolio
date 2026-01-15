@@ -102,12 +102,19 @@ function selectAnswer(e) {
     selectedBtn.classList.add("incorrect");
   }
 
-  Array.from(answerButtons.children).forEach(button => {
+  Array.from(ansBtn.children).forEach(button => {
     if (button.dataset.correct === "true") {
       button.classList.add("correct")
     }
     button.disabled = true;
   });
+  nextBtn.style.display = "block";
+}
+
+function showScore() {
+  resetState();
+  questionElement.innerHTML = ` You scored ${score} out of ${questions.length}!`
+  nextBtn.innerHTML = "Take the quiz again";
   nextBtn.style.display = "block";
 }
 
