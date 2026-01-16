@@ -75,3 +75,15 @@ body {
 .incorrect {
   background: #ff9393;
 }
+.timer {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #001e4d;
+  text-align: right;
+}
+.high-score-container {
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}

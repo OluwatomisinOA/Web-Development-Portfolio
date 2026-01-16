@@ -53,6 +53,15 @@ const nextBtn = document.getElementById('next-btn');
 let currentQuestionIndex = 0;
 let score = 0;
 
+let timer; // Holds the countdown interval
+let timeLeft = 15; // Starting time
+
+const highScoreElement = document.getElementById('high-score');
+let highScore = localStorage.getItem('quizHighScore') || 0;
+
+// Display the saved high score immediately
+highScoreElement.innerHTML = highScore;
+
 function startQuiz() {
 
   currentQuestionIndex = 0;
@@ -65,6 +74,7 @@ function startQuiz() {
 function showQuestion() {
 
   resetState();
+  startTimer();
 
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
@@ -93,6 +103,8 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+  clearInterval(timer);
+
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect) {
@@ -113,7 +125,17 @@ function selectAnswer(e) {
 
 function showScore() {
   resetState();
+  clearInterval(timer);
+  
   questionElement.innerHTML = ` You scored ${score} out of ${questions.length}!`
+
+  if (score > highScore) {
+    highScore = score;
+    localStorage.setItem('quizHighScore', highScore);
+    highScoreElement.innerHTML = highScore;
+    questionElement.innerHTML += `<br><strong>New High Score!</strong>`;
+  }
+
   nextBtn.innerHTML = "Take the quiz again";
   nextBtn.style.display = "block";
 }
@@ -134,4 +156,34 @@ nextBtn.addEventListener("click", () => {
     startQuiz()
   }
 })
+
+function startTimer() {
+  const timeLeftElement = document.getElementById('time-left');
+  timeLeft = 15;
+  timeLeftElement.innerHTML = timeLeft;
+  
+  clearInterval(timer); // Safety clear
+  
+  timer = setInterval(() => {
+    timeLeft--;
+    timeLeftElement.innerHTML = timeLeft;
+    
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      handleTimeout();
+    }
+  }, 1000);
+}
+
+function handleTimeout() {
+  // Logic to lock the buttons if time runs out
+  Array.from(ansBtn.children).forEach(button => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextBtn.style.display = "block";
+}
+
 startQuiz()
