@@ -21,19 +21,21 @@
       <div class="text-2xl font-bold text-white cursor-pointer">SONIC <span class="text-electric-blue">VISION</span></div>
 
       <ul class="hidden md:flex space-x-8">
+        <li class="text-gray-300 hover:text-white cursor-pointer transition"><a href="#hero">Home</a></li>
         <li class="text-gray-300 hover:text-white cursor-pointer transition"><a href="#specs">Specs</a></li>
         <li class="text-gray-300 hover:text-white cursor-pointer transition"><a href="#reviews">Review</a></li>
         <li class="text-gray-300 hover:text-white cursor-pointer transition"><a href="#support">Support</a></li>
       </ul>
 
-      <div class="absolute top-full left-0 w-full backdrop-blur flex flex-cols items-center gap-8 py-8 hidden" id="mobile-menu">
-        <a href="#specs">Specs</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#support">Support</a>
+      <div class="absolute top-full right-0 w-[100px] pl-3 backdrop-blur-xl flex flex-col py-8 rounded-2xl bg-deep-space border border-white/10  items-start gap-6 hidden md:hidden" id="mobile-menu">
+        <a class="hover:text-neon-pink" href="#hero">Home</a>
+        <a class="hover:text-neon-pink" href="#specs">Specs</a>
+        <a class="hover:text-neon-pink" href="#reviews">Reviews</a>
+        <a class="hover:text-neon-pink" href="#support">Support</a>
       </div>
 
       <div class="flex items-center gap-4">
-        <i class="ri-menu-3-line text-2xl md:hidden cursor-pointer"></i>
+        <i class="ri-menu-3-line text-2xl md:hidden cursor-pointer" id="menu-btn"></i>
 
         <button class="hidden md:block bg-neon-pink text-deep-space font-bold px-6 py-2 rounded-full hover:bg-neon-pink/80 hover:translate-y-1 transition">
           Pre-order
@@ -43,7 +45,7 @@
   </nav>
 
   <!-- Hero section -->
-   <section class="relative min-h-screen w-full flex flex-col items-center justify-center bg-deep-space overflow-hidden">
+   <section class="relative min-h-screen w-full flex flex-col items-center justify-center bg-deep-space overflow-hidden" id="hero">
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-electric-blue/20 blur-[100px] rounded-full"></div>
 
@@ -102,13 +104,13 @@
 
     </section>
 
-    <!-- Wrapper section -->
+    <!-- Reviews section -->
      <section class="bg-deep-space py-10" id="reviews">
-      <div class="max-w-7xl mx-auto px-6 text-3xl md:text-5xl font-bold text-center mb-16">
+      <div class="max-w-7xl mx-auto px-6 text-3xl md:text-4xl font-bold text-center mb-16">
         TRUSTED BY PROS
       </div>
 
-      <div class="flex overflow-x-auto pb-8 gap-6 snap-x no-scrollbar">
+      <div class="flex overflow-x-auto pb-8 gap-6 snap-x pl-6 pr-6 no-scrollbar">
         <div class="min-w-[300px] bg-white/5 p-6 rounded-xl border border-white/10">
           <div class="text-yellow-400 mb-4">
             <i class="ri-star-fill"></i>
@@ -166,7 +168,7 @@
      </section>
 
     <!-- Support section -->
-     <section class="py-10 bg-deep-space relative overflow-hidden" id="support">
+     <section class="py-8 bg-deep-space relative overflow-hidden" id="support">
       <div class="py-20 text-center" id="support">
         <div class="max-w-3xl mx-auto px-6">
           <h2 class="text-4xl font-bold text-white mb-6">
@@ -197,5 +199,7 @@
         </div>
 
       </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
