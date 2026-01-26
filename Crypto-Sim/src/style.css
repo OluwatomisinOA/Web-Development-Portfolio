@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flash-green {
+  animation: flashGreen 0.5s ease-out;
+}
+
+.flash-red {
+  animation: flashRed 0.5s ease-out;
+}
+
+@keyframes flashGreen {
+  0% {
+    color: #0ecb81;
+    text-shadow: 0 0 10px #0ecb81;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes flashRed {
+  0% {
+    color: #f6465d;
+    text-shadow: 0 0 10px #f6465d;
+  }
+  100% {
+    color: white;
+  }
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
