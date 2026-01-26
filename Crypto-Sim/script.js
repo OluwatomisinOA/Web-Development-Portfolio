@@ -14,7 +14,7 @@ const market = [
 
 function createCoinCard(coin) {
 
-  if 
+  
   return `
     <div onclick="buyCoin('${coin.id}')" class="bg-crypto-card rounded-lg p-4 flex justify-between items-center hover:bg-slate-700 hover:scale-105 cursor-pointer w-full">
       <div class="">
