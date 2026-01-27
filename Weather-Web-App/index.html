@@ -13,12 +13,17 @@
 </head>
 <body>
 
-  <div id="weather-card">
+  
 
+  <div id="weather-card">
+    
     <div id="input-container">
 
       <input type="text" placeholder="Enter city" id="city-input">
       <button type="button" id="search-btn"><i data-lucide="search"></i></button>
+      <button id="theme-toggle" class="theme-btn">
+        <i data-lucide="sun"></i>
+      </button>
 
     </div>
 
@@ -30,7 +35,7 @@
       </div>
 
       <div id="temperature">
-        <i data-lucide="thermometer"></i>
+        <i id="temp-icon" data-lucide="thermometer"></i>
         <span id="temp-value">--°C</span>
       </div>
       <div id="weather-description">--</div>

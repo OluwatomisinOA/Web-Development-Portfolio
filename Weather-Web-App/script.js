@@ -8,6 +8,22 @@ let humidity = document.getElementById("humidity");
 let sunriseTime = document.getElementById("sunrise-time");
 let sunsetTime = document.getElementById("sunset-time");
 let hourlyForecast = document.getElementById("hourly-forecast");
+let tempIcon = document.getElementById("temp-icon");
+const themeToggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+themeToggleBtn.addEventListener("click", () => {
+
+  body.classList.toggle("dark-theme");
+  const icon = themeToggleBtn.querySelector("i");
+  if (body.classList.contains("dark-theme")) {
+    icon.setAttribute("data-lucide", "moon");
+  } else {
+    icon.setAttribute("data-lucide", "sun");
+  }
+  lucide.createIcons();
+  
+});
 
 function handleSearch() {
 
@@ -68,6 +84,8 @@ function updateUI(data) {
   humidity.textContent = `Humidity: ${data.currentConditions.humidity}%`;
   sunriseTime.textContent = `Sunrise: ${data.currentConditions.sunrise.slice(0, 5)}`;
   sunsetTime.textContent = `Sunset: ${data.currentConditions.sunset.slice(0, 5)}`;
+  let currentIcon = data.currentConditions.icon === "rain" ? "cloud-rain" : "sun";
+  tempIcon.setAttribute("data-lucide", currentIcon);
   
   hourlyForecast.innerHTML = "";
   data.days[0].hours.forEach(hour => {
@@ -77,7 +95,7 @@ function updateUI(data) {
     hourDiv.innerHTML = `
       <div class="hour-time">${hour.datetime.slice(0, 5)}</div>
       <div class="hour-temp">${Math.round(hour.temp)}°C</div>
-      <div class="hour-icon"><i data.currentConditions.icon="${iconName}"></i></div>
+      <div class="hour-icon"><i data-lucide="${iconName}"></i></div>
     `;
     hourlyForecast.appendChild(hourDiv);
   });
