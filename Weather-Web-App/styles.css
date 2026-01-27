@@ -90,6 +90,47 @@ body {
   font-size: 1rem;
 }
 
+#hourly-forecast {
+  margin-top: 20px;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  scrollbar-width: none;
+}
+
+#hourly-forecast::-webkit-scrollbar {
+  display: none;
+}
+
+.hour-block {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2); 
+  padding: 10px 20px;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.hour-block:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.hour-time {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.hour-temp {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;

@@ -45,8 +45,8 @@ async function fetchWeatherData(location) {
     }
 
     const data = await response.json();
-
     console.log(data)
+    updateUI(data);
   } catch (error) {
     console.log(error)
     alert("Error:", error)
@@ -54,7 +54,58 @@ async function fetchWeatherData(location) {
 
 }
 
+function updateUI(data) {
 
+  const hero = document.getElementById("hero-section");
+  hero.classList.remove("fade-in-up"); 
+  void hero.offsetWidth; 
+  hero.classList.add("fade-in-up");
 
+  cityName.textContent = data.resolvedAddress;
+  tempValue.textContent = Math.round(data.currentConditions.temp) + "°C";
+  weatherDesc.textContent = data.currentConditions.conditions;
+  windSpeed.textContent = `Wind: ${data.currentConditions.windspeed}km/h`;
+  humidity.textContent = `Humidity: ${data.currentConditions.humidity}%`;
+  sunriseTime.textContent = `Sunrise: ${data.currentConditions.sunrise.slice(0, 5)}`;
+  sunsetTime.textContent = `Sunset: ${data.currentConditions.sunset.slice(0, 5)}`;
+  
+  hourlyForecast.innerHTML = "";
+  data.days[0].hours.forEach(hour => {
+    let iconName = hour.icon === "rain" ? "cloud-rain" : "sun";
+    let hourDiv = document.createElement("div");
+    hourDiv.classList.add("hour-block");
+    hourDiv.innerHTML = `
+      <div class="hour-time">${hour.datetime.slice(0, 5)}</div>
+      <div class="hour-temp">${Math.round(hour.temp)}°C</div>
+      <div class="hour-icon"><i data.currentConditions.icon="${iconName}"></i></div>
+    `;
+    hourlyForecast.appendChild(hourDiv);
+  });
+
+  lucide.createIcons();
+
+}
+
+function init() {
+
+  if (navigator.geolocation) {
+    
+    navigator.geolocation.getCurrentPosition(position => {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      fetchWeatherData(`${lat},${lon}`);
+    },
+      (error) => {
+        console.log("Location denied, loading default");
+        fetchWeatherData("London");
+      }
+    );
+  } else {
+    fetchWeatherData("London");
+  }
+
+}
 
 lucide.createIcons();
+
+init()
