@@ -1,6 +1,25 @@
 import styles from './TodoForm.module.css';
 
-export function TodoForm() {
+export function TodoForm({ onCreate }) {
+
+  function handleSubmit(event) { 
+    event.preventDefault();
+
+    const { elements } = event.target;
+
+    if (elements.name.value === "") return;
+    
+    onCreate({
+      name: elements.name.value,
+      description: elements.description.value,
+      deadline: elements.deadline.value,
+      priority: elements.priority.value,
+      completed: false
+    })
+
+    event.target.reset()
+
+  }
 
   return (
     
@@ -8,7 +27,7 @@ export function TodoForm() {
 
       <h3 className={styles.Title}>New To-Do</h3>
 
-      <form className={styles.Form}>
+      <form className={styles.Form} onSubmit={handleSubmit}>
 
         <div className={styles.FormFields}>
 
@@ -44,7 +63,7 @@ export function TodoForm() {
             </div>
 
             <div className={styles.FormField}>
-              <label htmlFor="priority">Prirority</label>
+              <label htmlFor="priority">Priority</label>
 
               <select
                 defaultValue="none"
