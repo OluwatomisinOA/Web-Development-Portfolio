@@ -51,3 +51,24 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+/* 1. Default Focus (The blue you want) */
+input:focus, 
+textarea:focus, 
+select:focus {
+  outline: 2px solid rgb(61, 106, 210);
+  outline-offset: 1px;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: salmon;
+  outline-color: salmon;
+}
+
+input[aria-invalid="true"]:focus,
+textarea[aria-invalid="true"]:focus,
+select[aria-invalid="true"]:focus {
+  outline-color: salmon; 
+}

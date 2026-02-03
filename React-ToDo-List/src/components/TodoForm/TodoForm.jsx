@@ -1,28 +1,29 @@
 import styles from './TodoForm.module.css';
 import { PRIORITY_DEFAULT } from '../../constants/priorities';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { TodoFormFields } from '../TodoFormFields/TodoFormFields';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { getTodoSchema } from '../../schemas/todo';
 
 export function TodoForm({ onCreate }) {
 
   const [showAllFields, setShowAllFields] = useState(false);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(getTodoSchema()),
+    defaultValues: {
+      description: "",
+      deadline: "",
+      priority: PRIORITY_DEFAULT,
+      completed: false,
+    }
+  });
 
-  function handleSubmit(event) { 
-    event.preventDefault();
-
-    const { elements } = event.target;
-
-    if (elements.name.value === "") return;
+  function handleCreate(data) {
     
-    onCreate({
-      name: elements.name.value,
-      description: elements.description?.value ?? "",
-      deadline: elements.deadline?.value ?? "",
-      priority: elements.priority?.value ?? {PRIORITY_DEFAULT},
-      completed: false
-    })
-
-    event.target.reset()
+    onCreate(data)
+    reset();
 
   }
 
@@ -37,9 +38,12 @@ export function TodoForm({ onCreate }) {
         </button>
       </h3>
 
-      <form className={styles.Form} onSubmit={handleSubmit}>
+      <form className={styles.Form} onSubmit={handleSubmit(handleCreate)}>
 
-        <TodoFormFields showAllFields={ showAllFields } />
+        <TodoFormFields
+          showAllFields={showAllFields}
+          register={register}
+          errors={errors} />
 
         <input type="submit" value="Add"/>
       </form>
