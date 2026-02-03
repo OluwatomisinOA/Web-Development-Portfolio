@@ -15,6 +15,12 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -23,7 +29,6 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 24px;
-  overflow-x: hidden;
 }
 
 input,
@@ -39,4 +44,10 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover {
   background: lightgray;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

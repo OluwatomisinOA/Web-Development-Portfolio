@@ -3,11 +3,8 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  min-height: 100vh;
-  width: 100%;
-  padding: 16px;
-  overflow-x: hidden;
-  box-sizing: border-box;
+  height: 100vh;
+  padding: 30px;
 }
 
 .Header {
@@ -25,7 +22,6 @@
 
 .AppContainer {
   width: 100%;
-  max-width: 100%;
   padding: 16px;
   background: light-dark(#ffffff, #212121);
   border-radius: 16px;
