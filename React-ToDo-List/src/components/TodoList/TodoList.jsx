@@ -2,6 +2,7 @@ import { TodoListItem } from '../TodoListItem/TodoListItem';
 import styles from './TodoList.module.css';
 
 export function TodoList({ todos, onUpdate, onDelete }) {
+  if (!todos) return <p>Loading...</p>;
   return (
     <section>
       <h3>To-Do's List</h3>

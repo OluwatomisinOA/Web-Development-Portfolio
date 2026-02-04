@@ -11,7 +11,7 @@ export function TodoForm({ onCreate }) {
   const [showAllFields, setShowAllFields] = useState(false);
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
     mode: "onChange",
-    resolver: yupResolver(getTodoSchema()),
+    resolver: yupResolver(getTodoSchema({isNew: true})),
     defaultValues: {
       description: "",
       deadline: "",
