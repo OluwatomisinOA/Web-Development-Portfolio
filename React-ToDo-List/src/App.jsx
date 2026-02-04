@@ -1,5 +1,5 @@
 import styles from './App.module.css';
-import { TodoForm } from './components/ToDoForm/TodoForm';
+import { TodoForm } from './components/TodoForm/TodoForm';
 import { TodoList } from './components/TodoList/TodoList';
 import { TodoFilters } from './components/TodoFilters/TodoFilters';
 import { useTodos } from './hooks/todo';
