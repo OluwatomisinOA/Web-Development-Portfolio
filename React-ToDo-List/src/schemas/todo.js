@@ -14,7 +14,7 @@ export function getTodoSchema({ isNew = false } = {}) {
       .min(3, "Name should have minimum length of 3 characters")
       .max(50, "Name should have maximum length of 50 characters"),
     description: Yup.string()
-      .max(200, "Name should have maximum length of 200 characters"),
+      .max(200, "Description should have maximum length of 200 characters"),
     deadline: isNew ? deadlineRule
       .test("is-future-date", "Deadline can't be date in past",
         (value) => { 
