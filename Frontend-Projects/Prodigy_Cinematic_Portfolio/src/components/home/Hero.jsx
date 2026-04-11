@@ -32,7 +32,7 @@ export default function Hero() {
                     initial={{opacity: 0}}
                     whileInView={{opacity: 1}}
                     transition={{duration: 0.8, delay: 1.2}}
-                    className="self-start border border-[#C9A84C] px-8 py-3 font-body text-xl tracking-wide text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#080808] transition-all duration-300"
+                    className="self-start border border-[#C9A84C] px-8 py-3 font-body text-xl tracking-wide text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#080808] hover:scale:105 active:translate-y-2 transition-all duration-300"
                 >
                     View Portfolio
                 </motion.button>
