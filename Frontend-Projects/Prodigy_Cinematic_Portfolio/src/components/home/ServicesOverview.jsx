@@ -32,7 +32,7 @@ export default function ServicesOverview() {
     return (
         <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808]">
             <motion.p 
-                className="text-[#C9A84C] font-mono text-sm uppercase"
+                className="text-[#C9A48C] font-mono text-sm uppercase"
                 whileInView={{opacity: 1, y: 0}}
                 initial={{opacity: 0, y: 30}}
                 transition={{duration: 0.8, delay: 0.2}}
@@ -58,7 +58,7 @@ export default function ServicesOverview() {
                     >
                         <div>{service.icon}</div>
                         <h1 className="text-xl text-[#C9A84C] font-display">{service.title}</h1>
-                        <p className="text-sm text-[#888888] font-body leading relaxed">{service.description}</p>
+                        <p className="text-sm text-[#888888] font-body leading-relaxed">{service.description}</p>
                     </motion.div>
                 ))}
             </div>
