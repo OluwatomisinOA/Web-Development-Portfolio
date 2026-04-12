@@ -1,6 +1,3 @@
-
-
-
 export default function FilterBar({activeCategory, onCategoryChange}) {
     
     const categories = ['all', 'portrait', 'wedding', 'commercial'];
