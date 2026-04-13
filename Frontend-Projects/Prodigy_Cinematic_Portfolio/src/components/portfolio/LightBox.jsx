@@ -1,4 +1,25 @@
+import { useEffect } from "react";
+
 export default function LightBox({project, onClose, onNext, onPrev}) {
+
+    useEffect(() => {
+        const handler = (e) => {
+            if (e.key === 'Escape') {
+                onClose();
+            } 
+            if (e.key === 'ArrowRight') {
+                onNext();
+            }
+            if (e.key === 'ArrowLeft') {
+                onPrev();
+            }
+        };
+
+        window.addEventListener('keydown', handler);
+
+        return () => window.removeEventListener('keydown', handler);
+    }, [onClose, onNext, onPrev])
+
     return (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
             <img className="max-h-[80vh] max-w-[80vw] object-contain" src={project.image} />
