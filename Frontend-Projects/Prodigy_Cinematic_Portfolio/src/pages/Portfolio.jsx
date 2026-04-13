@@ -2,6 +2,8 @@ import { useState } from "react";
 import { projects } from "../data/projects";
 import FilterBar from "../components/portfolio/FilterBar";
 import MasonryGrid from "../components/portfolio/MasonryGrid";
+import LightBox from "../components/portfolio/LightBox";
+import { AnimatePresence } from "framer-motion";
 
 export default function Portfolio() {
 
@@ -21,16 +23,14 @@ export default function Portfolio() {
     )
 
     const handleNext = () => (
-        setLightBoxIndex((lightBoxIndex) => lightBoxIndex + 1)
+        setLightBoxIndex(i => Math.min(i + 1, filteredProjects.length - 1))
     )
 
-    const handlePrev = () => (
+    const handlePrev = () => {
         if (lightBoxIndex > 0) {
-            setLightBoxIndex((lightBoxIndex) => lightBoxIndex - 1)
-        } else {
-            setLightBoxIndex(null)
+            setLightBoxIndex(i => i - 1)
         }
-    )
+    }
 
     return (
         <>
@@ -40,7 +40,17 @@ export default function Portfolio() {
             />
             <MasonryGrid 
                 projects={filteredProjects}
+                onOpen={handleOpen}
             />
+            {
+                lightBoxIndex !== null && 
+                <LightBox 
+                    project={filteredProjects[lightBoxIndex]}
+                    onClose={handleClose}
+                    onNext={handleNext}
+                    onPrev={handlePrev}
+                />
+            }
         </>
     )
 }
