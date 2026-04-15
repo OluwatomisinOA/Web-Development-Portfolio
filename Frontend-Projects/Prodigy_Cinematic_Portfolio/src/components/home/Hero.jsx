@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
 
@@ -28,14 +29,16 @@ export default function Hero() {
                         </motion.span>
                     ))}
                 </motion.h1>
-                <motion.button 
-                    initial={{opacity: 0}}
-                    whileInView={{opacity: 1}}
-                    transition={{duration: 0.8, delay: 1.2}}
-                    className="self-start border border-[#C9A84C] px-8 py-3 font-body text-xl tracking-wide text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#080808] hover:scale:105 active:translate-y-2 transition-all duration-300"
-                >
-                    View Portfolio
-                </motion.button>
+                <Link to="/portfolio">
+                    <motion.button 
+                        initial={{opacity: 0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.8, delay: 1.2}}
+                        className="self-start border border-[#C9A84C] px-8 py-3 font-body text-xl tracking-wide text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#080808] hover:scale:105 active:translate-y-2 transition-all duration-300"
+                    >
+                        View Portfolio
+                    </motion.button>
+                </Link>
             </div>
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
                 <p className="font-mono text-sm text-[#888888]">SCROLL</p>
