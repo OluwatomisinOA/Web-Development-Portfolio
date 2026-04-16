@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function Contact() {
     
@@ -11,7 +10,7 @@ export default function Contact() {
         message: ''
     })
 
-    const handlechange = (e) => {
+    const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
     
@@ -35,36 +34,55 @@ export default function Contact() {
                     Let's Create Together
                 </motion.h1>
                 <div className="text-[#888888] text-sm">
-                    <Link to="/contact"><p>opeyemeionaopepo@gmail.com</p></Link>
-                    <Link to="/contact"><p>+234 812 810 5432</p></Link>
+                    <a href="mailto:opeyemionaopepo@gmail.com"><p>opeyemeionaopepo@gmail.com</p></a>
+                    <a to="tel:+2348128105432"><p>+234 812 810 5432</p></a>
                     <p>Birmingham, UK</p>
                 </div>
             </div>
             <div>
                 <form>
-                    <label htmlFor="name" className="">
-                        Name:
-                        <input id="name" type="text" name="name" value={formData.name} onChange={handlechange}/>
-                    </label>
-                    <label>
-                        Eamil:
-                        <input id="email" type="text" name="email" value={formData.email} onChange={handlechange}/>
-                    </label>
-                    <label htmlFor="service">
-                        <select id="service" name="service" value={formData.service} onChange={handlechange}>
-                            <option>Portrait</option>
-                            <option>Wedding</option>
-                            <option>Videography</option>
-                            <option>Commercial</option>
-                        </select>
-                    </label>
+                    <div className="flex flex-col gap-6">
+                        <label htmlFor="name" 
+                            className="flex flex-col gap-2 text-[#888888] font-mono text-xs uppercase tracking widest"
+                        >
+                            Name:
+                            <input id="name" type="text" name="name" value={formData.name} onChange={handleChange}
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                            />
+                        </label>
+                        <label htmlFor="email"
+                            className="flex flex-col gap-2 text-[#888888] font-mono text-xs uppercase tracking widest"
+                        >
+                            Email:
+                            <input id="email" type="text" name="email" value={formData.email} onChange={handleChange}
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                            />
+                        </label>
+                        <label htmlFor="service"
+                            className="flex flex-col gap-2 text-[#888888] font-mono text-xs uppercase tracking widest"
+                        >
+                            Service
+                            <select id="service" name="service" value={formData.service} onChange={handleChange}
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                            >
+                                <option>Portrait</option>
+                                <option>Wedding</option>
+                                <option>Videography</option>
+                                <option>Commercial</option>
+                            </select>
+                        </label>
 
-                    <label htmlFor="message">
-                        Message:
-                        <textarea id="message" name="message" value={formData.message} onChange={handlechange}/>
-                    </label>
+                        <label htmlFor="message"
+                            className="flex flex-col gap-2 text-[#888888] font-mono text-xs uppercase tracking widest"
+                        >
+                            Message:
+                            <textarea id="message" name="message" value={formData.message} onChange={handleChange}
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                            />
+                        </label>
+                    </div>
 
-                    <button className="px-4 py-4 ">Connnect</button>
+                    <button className="bg-[#C9A84C] text-[#080808] px-8 py-3 font-mono text-sm tracking-widest uppercase hover:bg-[#b8963d] hover:scale-105 active:scale-90 transition-all duration-300 mt-4">Connect</button>
                 </form>
             </div>
         </section>
