@@ -9,24 +9,27 @@ export default function ClientLogos() {
         <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808]">
             <motion.p 
                     className="text-[#C9A84C] font-mono text-sm uppercase"
-                    whileInView={{opacity: 1, y: 0}}
                     initial={{opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
                     transition={{duration: 0.8, delay: 0.2}}
                 >
                     ✦ The Trusted By
                 </motion.p>
                 <motion.h1 
                     className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-4"
-                    whileInView={{opacity: 1, y: 0}}
                     initial={{opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
                     transition={{duration: 0.8, delay: 0.2}}
                 >
-                    CLients & Collaborations
+                    Clients & Collaborations
                 </motion.h1>
                 <motion.div
                     className="flex flex-wrap gap-4"
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
                     transition={{duration: 0.8, delay: 0.2}}
                 >
                     {clients.map((client, index) => (
