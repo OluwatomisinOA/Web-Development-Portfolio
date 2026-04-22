@@ -27,17 +27,19 @@ export default function Contact() {
                 </motion.p>
                 <motion.h1 
                     className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-4"
-                    whileInView={{opacity: 1, y: 0}}
                     initial={{opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
                     transition={{duration: 0.8, delay: 0.2}}
                 >
                     Let's Create Together
                 </motion.h1>
                 <div className="text-[#888888] text-sm">
                     <a href="mailto:opeyemionaopepo@gmail.com"><p>opeyemeionaopepo@gmail.com</p></a>
-                    <a to="tel:+2348128105432"><p>+234 812 810 5432</p></a>
+                    <a href="tel:+2348128105432"><p>+234 812 810 5432</p></a>
                     <p>Birmingham, UK</p>
                 </div>
+                <div className="border-t border-white/30 my-6"></div>
             </div>
             <div>
                 <form>
@@ -47,7 +49,7 @@ export default function Contact() {
                         >
                             Name:
                             <input id="name" type="text" name="name" value={formData.name} onChange={handleChange}
-                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA]/60 px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
                             />
                         </label>
                         <label htmlFor="email"
@@ -55,7 +57,7 @@ export default function Contact() {
                         >
                             Email:
                             <input id="email" type="text" name="email" value={formData.email} onChange={handleChange}
-                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA]/60 px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
                             />
                         </label>
                         <label htmlFor="service"
@@ -63,12 +65,12 @@ export default function Contact() {
                         >
                             Service
                             <select id="service" name="service" value={formData.service} onChange={handleChange}
-                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA]/60 px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300 appearance-none cursor-pointer"
                             >
-                                <option>Portrait</option>
-                                <option>Wedding</option>
-                                <option>Videography</option>
-                                <option>Commercial</option>
+                                <option value='portrait'>Portrait</option>
+                                <option value='wedding'>Wedding</option>
+                                <option value='videography'>Videography</option>
+                                <option value='commercial'>Commercial</option>
                             </select>
                         </label>
 
@@ -77,7 +79,7 @@ export default function Contact() {
                         >
                             Message:
                             <textarea id="message" name="message" value={formData.message} onChange={handleChange}
-                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA] px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
+                                className="w-full bg-[#111111] border border-white/10 text-[#F5F0EA]/60 px-4 py-3 font-body text-sm focus:outline-none focus:border-[#C9A84C] transition-colors duration-300"
                             />
                         </label>
                     </div>
