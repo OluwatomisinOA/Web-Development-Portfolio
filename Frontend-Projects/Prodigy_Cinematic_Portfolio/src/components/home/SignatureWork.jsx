@@ -5,8 +5,9 @@ export default function SignatureWork() {
     return (
         <section className="bg-[#080808] px-6 md:px-12 lg:px-20 py-24">
             <motion.div
-                whileInView={{opacity: 1, y: 0}}
                 initial={{opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
                 transition={{duration: 0.8, delay: 0.3}}
             >
                 <p className="text-[#C9A84C] font-mono text-sm uppercase">✦ SELECTED WORK</p>
@@ -17,6 +18,7 @@ export default function SignatureWork() {
                     <motion.div key={project.id} className={`relative overflow-hidden group cursor-pointer ${index === 0 || index === 3 ? 'col-span-2' : 'col-span-1'}`}
                         initial={{opacity: 0, y: 30}}
                         whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true}}
                         transition={{duration: 0.8, delay: 0.3 + index * 0.1}}
                     >
                         <img src={project.image} className="w-full h-80 object-cover"/>
