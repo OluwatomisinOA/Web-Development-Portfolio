@@ -21,7 +21,7 @@ export default function Hero() {
                         <motion.span
                             key={index}
                             initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
+                            animate={{opacity: 1, y: 0}}
                             transition={{duration: 0.8, delay: 0.5 + index * 0.1}}
                             className="inline-block mr-4"
                         >
@@ -33,6 +33,7 @@ export default function Hero() {
                     <motion.button 
                         initial={{opacity: 0}}
                         whileInView={{opacity: 1}}
+                        viewport={{once: true}}
                         transition={{duration: 0.8, delay: 1.2}}
                         className="self-start border border-[#C9A84C] px-8 py-3 font-body text-xl tracking-wide text-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#080808] hover:scale:105 active:translate-y-2 transition-all duration-300"
                     >
