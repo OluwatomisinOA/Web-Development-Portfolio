@@ -32,17 +32,19 @@ export default function ServicesOverview() {
     return (
         <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808]">
             <motion.p 
-                className="text-[#C9A48C] font-mono text-sm uppercase"
-                whileInView={{opacity: 1, y: 0}}
+                className="text-[#C9A84C] font-mono text-sm uppercase"
                 initial={{opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
                 transition={{duration: 0.8, delay: 0.2}}
             >
                 ✦ Services
             </motion.p>
             <motion.h1 
                 className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-4"
-                whileInView={{opacity: 1, y: 0}}
                 initial={{opacity: 0, y: 30}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
                 transition={{duration: 0.8, delay: 0.2}}
             >
                 What We Offer
@@ -54,6 +56,7 @@ export default function ServicesOverview() {
                         key={service.id}
                         initial={{opacity: 0, y: 30}}
                         whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true}}
                         transition={{duration: 0.8, delay: 0.3 + index * 0.1}}
                     >
                         <div>{service.icon}</div>
