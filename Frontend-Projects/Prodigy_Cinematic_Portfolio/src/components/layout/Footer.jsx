@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const links = [
     {label: 'Portfolio', href: '/portfolio'},
@@ -23,9 +24,9 @@ export default function Footer() {
                 }
             </ul>
             <ul className="flex justify-between items-center gap-6">
-                <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">Instagram</a></li>
-                <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">Twitter</a></li>
-                <li><a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">Youtube</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="size={50} text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaInstagram /></a></li>
+                <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="size={50} text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaXTwitter /></a></li>
+                <li><a href="https://youtube.com" target="_blank" rel="noreferrer" className="size={50} text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaYoutube /></a></li>
             </ul>
             <p className="text-sm text-[#888888]">© {year} Prodigy Visuals. All rights reserved.</p>
         </footer>
