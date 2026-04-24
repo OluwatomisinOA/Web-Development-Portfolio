@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 export default function Contact() {
     
@@ -41,10 +42,10 @@ export default function Contact() {
                     <p>Birmingham, UK</p>
                 </div>
                 <div className="border-t border-white/30 my-6"></div>
-                <ul className="flex justify-around items-center gap-6">
-                    <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">Instagram</a></li>
-                    <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">Twitter</a></li>
-                    <li><a href="https://youtube.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">Youtube</a></li>
+                <ul className="flex around items-center gap-6">
+                    <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="size={50} text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaInstagram /></a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noreferrer" className="size={50} text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaXTwitter /></a></li>
+                    <li><a href="https://youtube.com" target="_blank" rel="noreferrer" className="size={50} text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaYoutube /></a></li>
                 </ul>
             </div>
             <div>
