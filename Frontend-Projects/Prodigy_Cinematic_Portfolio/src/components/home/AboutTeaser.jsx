@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import pic from "../../assets/images/portfolio_pic.jpg"
 
 export default function AboutTeaser() {
     return (
         <section className="bg-[#080808] px-6 md:px-12 lg:px-20 py-24 grid grid-cols-2 gap-12">
             <div>
                 <img 
-                    src="https://placehold.co/600x700/111111/888888" 
+                    src={pic} 
                     className="w-full h-full object-cover"
                 />
             </div>
