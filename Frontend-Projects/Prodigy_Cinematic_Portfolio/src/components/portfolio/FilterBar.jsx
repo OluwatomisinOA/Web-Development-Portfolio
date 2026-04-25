@@ -1,6 +1,6 @@
 export default function FilterBar({activeCategory, onCategoryChange}) {
     
-    const categories = ['all', 'portrait', 'wedding', 'commercial'];
+    const categories = ['all', 'portrait', 'landscape', 'wedding', 'commercial'];
     
     return (
         <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808]">
