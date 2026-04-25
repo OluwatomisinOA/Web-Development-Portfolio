@@ -29,16 +29,30 @@ export const projects = [
     },
     {
         id: 5,
+        title: "",
+        category: "portrait",
+        image: "/src/assets/images/project9.jpg",
+        description: ""
+    },
+    {
+        id: 6,
         title: "Wedding Calm",
         category: "wedding",
         image: "/src/assets/images/Sproject4.mp4",
         description: "A cinematic wedding reel capturing the calm before the ceremony",
     },
     {
-        id: 6,
+        id: 7,
         title: "Bride & Bridesmaids",
         category: "wedding",
         image: "/src/assets/images/Sproject5.mp4",
         description: "Beautiful bridal party captured and edited by Prodigy Visuals",
     },
+    {
+        id: 8,
+        title: "",
+        category: "portrait",
+        image: "/src/assets/images/project13.jpg",
+        description: ""
+    }
 ]
