@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { projects } from "../data/projects";
+import { projects } from "../data/portfolioProjects";
 import FilterBar from "../components/portfolio/FilterBar";
 import MasonryGrid from "../components/portfolio/MasonryGrid";
 import LightBox from "../components/portfolio/LightBox";
