@@ -22,7 +22,7 @@ export default function LightBox({project, onClose, onNext, onPrev}) {
 
     return (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
-            <img className="max-h-[80vh] max-w-[80vw] object-contain" src={project.image} />
+            {project.image.endsWith('mp4') ? <video className="max-h-[80vh] max-w-[80vw] object-contain" src={project.image} autoPlay muted loop playsInline/> : <img className="max-h-[80vh] max-w-[80vw] object-contain" src={project.image} />}
             <button 
                 className="absolute top-6 right-6 text-lg text-[#C9A84C]"
                 onClick={onClose}
@@ -41,7 +41,7 @@ export default function LightBox({project, onClose, onNext, onPrev}) {
             >
                 →
             </button>
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center flex flex-col gap-1 group">
+            <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center flex flex-col gap-1 group">
                 <p className="text-[#C9A84C] font-mono text-sm uppercase">{project.category}</p>
                 <h1 className="font-display text-2xl text-[#F5F0EA]">{project.title}</h1>
             </div>
