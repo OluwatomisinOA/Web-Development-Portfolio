@@ -16,7 +16,7 @@ export default function SignatureWork() {
             </motion.div>
             <div className="grid grid-cols-3 gap-4">
                 {projects.map((project, index) => (
-                    <motion.div key={project.id} className={`relative overflow-hidden group cursor-pointer ${index === 0 || index === 3 ? 'col-span-2' : 'col-span-1'}`}
+                    <motion.div key={project.id} className={`relative overflow-hidden group cursor-pointer ${index === 0 || index === 3 || index === 4 || index === 7 ? 'col-span-2' : 'col-span-1'}`}
                         initial={{opacity: 0, y: 30}}
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{once: true}}
