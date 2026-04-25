@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { cn } from "../../utils/cn";
+import pic from "../../assets/images/prodigy_logo.jpg";
 
 const links = [
     {label: 'Portfolio', href: '/portfolio'},
