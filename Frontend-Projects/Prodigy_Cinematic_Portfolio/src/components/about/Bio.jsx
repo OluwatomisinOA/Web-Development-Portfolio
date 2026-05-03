@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
-import pic from "../../assets/images/portfolio_pic.jpg"
+import pic from "../../assets/images/profile_pic.jpg"
 
 export default function Bio() {
     return (
-        <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808] grid grid-cols-2 gap-12">
-            <div>
+        <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808] grid grid-cols-1 md:flex md:items-center md:justify-around gap-8">
+            <div className="w-[60%] md:w-[40%]">
                 <img 
                     src={pic} 
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    alt="Prodigy Visuals"
                 />
             </div>
             <div>

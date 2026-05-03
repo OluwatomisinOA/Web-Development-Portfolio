@@ -29,10 +29,10 @@ export const projects = [
     },
     {
         id: 5,
-        title: "",
+        title: "The Glow of Motherhood",
         category: "portrait",
         image: "/src/assets/images/project9.jpg",
-        description: ""
+        description: "The serene beauty and radiant confidence, embracing her journey into motherhood, exuding a sense of poise and joyful anticipation."
     },
     {
         id: 6,
@@ -50,9 +50,9 @@ export const projects = [
     },
     {
         id: 8,
-        title: "",
+        title: "Celestial Glow",
         category: "portrait",
         image: "/src/assets/images/project13.jpg",
-        description: ""
+        description: "Utilizing high-contrast backlighting, transforming the maternity silhouette into a work of art, emphasizing the 'divine' aspect of the 'Mommy-to-Be' journey."
     }
 ]

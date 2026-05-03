@@ -49,7 +49,7 @@ export default function ServicesOverview() {
             >
                 What We Offer
             </motion.h1>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {services.map((service, index) => (
                     <motion.div 
                         className="flex flex-col gap-4 bg-[#111111] p-8 border border-white/5 hover:border-[#C9A84C]/30 transition-all duration-300"

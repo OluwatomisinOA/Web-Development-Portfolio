@@ -15,7 +15,7 @@ export default function CTABanner() {
             </motion.p>
             <motion.h1 
                 className="font-display text-4xl md:text-5xl text-[#080808] mt-4 mb-4"
-                initial={{opacity: 0, y: 30}}
+                initial={{opacity: 0, y: 10}}
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{duration: 0.8, delay: 0.2}}
@@ -25,8 +25,8 @@ export default function CTABanner() {
             <div className="flex gap-8 mt-8">
                 <Link to="/contact">
                     <motion.button
-                        className="bg-[#080808] text-[#F5F0EA] px-4 py-3 hover:bg-[#1a1a1a] hover:translate-y-2 hover:border-2 hover:border-[#080808] transition-all duration-500 active:scale-110"
-                        initial={{opacity: 0, y: 30}}
+                        className="bg-[#080808] text-[#F5F0EA] px-4 py-3 hover:bg-[#1a1a1a]/20 active:translate-y-2 hover:border-2 hover:border-[#080808] transition-all duration-300"
+                        initial={{opacity: 0, y: 10}}
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{once: true}}
                         transition={{duration: 0.8, delay: 0.2}}
@@ -36,8 +36,8 @@ export default function CTABanner() {
                 </Link>
                 <Link to="/portfolio">
                     <motion.button
-                        className="bg-transparent border-2 border-[#080808] text-[#080808] hover:text-[#F5F0EA] px-4 py-3 hover:bg-[#080808] hover:scale-110 transition-all duration-500 active:translate-y-2"
-                        initial={{opacity: 0, y: 30}}
+                        className="bg-transparent border-2 border-[#080808] text-[#080808] hover:text-[#F5F0EA] px-4 py-3 hover:bg-[#080808]/20 transition-all duration-300 active:translate-y-2"
+                        initial={{opacity: 0, y: 10}}
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{once: true}}
                         transition={{duration: 0.8, delay: 0.2}}

@@ -28,7 +28,7 @@ export default function Stats() {
 
     return (
         <section className="px-6 md:px-12 lg:px-20 py-18 bg-[#080808]">
-            <div className="grid grid-cols-4 gap-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
                 {stats.map((stat, index) => (
                     <motion.div
                         key={index}
@@ -38,7 +38,7 @@ export default function Stats() {
                         transition={{duration: 0.8, delay: 0.5 + index * 0.1}}
                         className="flex flex-col"
                     >
-                        <div className="text-5xl font-display flex">
+                        <div className="text-4xl md:text-5xl font-display flex">
                             <p className="text-[#F5F0EA]">{stat.number}</p>
                             <p className="text-[#C9A84C]">{stat.suffix}</p>
                         </div>

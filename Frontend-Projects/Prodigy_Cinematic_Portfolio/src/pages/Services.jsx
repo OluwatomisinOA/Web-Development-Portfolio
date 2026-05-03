@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -7,7 +8,7 @@ export default function Services() {
     const services = [
         {
             id: 1,
-            icon: "",
+            icon: "🎬",
             title: "Portrait Photography",
             description: "Intimate, editorial portraits that capture your true personality. Perfect for personal branding, artists, and professionals",
             features: ["2 hour session", "50+ edited photos", "Online gallery delivery", "Print-ready files"]
@@ -59,118 +60,144 @@ export default function Services() {
     ]
 
     return (
-        <>
-            <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808]">
-                <motion.p 
-                    className="text-[#C9A84C] font-mono text-sm uppercase"
-                    whileInView={{opacity: 1, y: 0}}
-                    initial={{opacity: 0, y: 30}}
-                    transition={{duration: 0.8, delay: 0.2}}
-                >
-                    ✦ What We Offer
-                </motion.p>
-                <motion.h1 
-                    className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-10"
-                    whileInView={{opacity: 1, y: 0}}
-                    initial={{opacity: 0, y: 30}}
-                    transition={{duration: 0.8, delay: 0.2}}
-                >
-                    Our Services
-                </motion.h1>
-                <motion.div className="grid grid-cols-2 gap-8">
-                    {services.map((service, index) => (
-                        <motion.div 
-                            className="flex flex-col gap-4 bg-[#111111] p-8 border border-white/5 hover:border-[#C9A84C]/30 transition-all duration-300"
-                            key={service.id}
-                            initial={{opacity: 0, y: 30}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{duration: 0.8, delay: 0.3 + index * 0.1}}
-                        >
-                            <div>{service.icon}</div>
-                            <h1 className="text-xl text-[#F5F0EA] font-display">{service.title}</h1>
-                            <p className="text-sm text-[#888888] font-body leading-relaxed">{service.description}</p>
-                            <ul className="flex flex-col gap-2">
-                                {service.features.map((feature, index) => (
-                                    <motion.li 
-                                        key={index}
-                                        className="text-lg text-[#888888] font-mono"
-                                        initial={{opacity: 0, y: 20}}
-                                        whileInView={{opacity: 1, y: 0}}
-                                        transition={{duration: 0.8, delay: 0.3}}
-                                    >
-                                        <span className="text-[#C9A84C] mr-3"> ✓</span>{feature}
-                                    </motion.li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                <motion.div className="mt-24 mb-12">
+        <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 0.4}}
+        >
+            <>
+                <Helmet>
+                    <title>What We Offer | Prodigy Visuals</title>
+                    <meta name="description" content="From weddings to commercial shoots, we offer world class photography and videography services tailored to your vision." />
+                    <meta name="keywords" content="wedding photography service, portrait photography service, commercial photography, videography service, West Yorkshire photographer prices, book photographer UK" />
+                    <meta property="og:title" content="What We Offer | Prodigy Visuals" />
+                    <meta property="og:description" content="World class photography and videography sevices for weddings, portraits, and commercial shoots." />
+                    <meta property="og:image" content="/og-image.jpg" />
+                    <meta property="og:type" content="website" />
+                    <meta name="geo.region" content="GB-West Yorkshire" />
+                    <meta name="geo.placename" content="West Yorkshire, UK" />
+                </Helmet>  
+                <section className="px-6 md:px-12 lg:px-20 py-24 bg-[#080808]">
                     <motion.p 
                         className="text-[#C9A84C] font-mono text-sm uppercase"
-                        whileInView={{opacity: 1, y: 0}}
-                        initial={{opacity: 0, y: 30}}
-                        transition={{duration: 0.8, delay: 0.2}}
-                    >
-                        ✦ How We Work
-                    </motion.p>
-                    <motion.h1 
-                        className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-10"
-                        whileInView={{opacity: 1, y: 0}}
-                        initial={{opacity: 0, y: 30}}
-                        transition={{duration: 0.8, delay: 0.2}}
-                    >
-                        Our Process
-                    </motion.h1>
-                </motion.div>
-                <motion.div className="grid grid-cols-4 gap-8">
-                    {steps.map((step, index) => (
-                        <motion.div
-                            key={index}
-                            className="flex flex-col gap-4 p-8 border-t border-[#C9A84C]/30 pt-6 transition-all duration-300"
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            transition={{duration: 0.8, delay: 0.3}}
-                        >
-                            <h1 className="text-5xl font-display text-[#C9A84C]">{step.number}</h1>
-                            <h2 className="text-xl text-[#F5F0EA] font-display">{step.title}</h2>
-                            <p className="text-sm text-[#888888] font-body leading-relaxed">{step.description}</p>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </section>
-            <section className="w-full px-6 md:px-12 lg:px-20 py-24 bg-[#C9A84C]">
-                <motion.p 
-                    className="text-[#080808] font-mono text-sm uppercase tracking-widest"
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    viewport={{once: true}}
-                    transition={{duration: 0.8, delay: 0.2}}
-                >
-                    ✦ Contact us today for a custom quote tailored to your needs
-                </motion.p>
-                <motion.h1 
-                    className="font-display text-4xl md:text-5xl text-[#080808] mt-4 mb-4"
-                    initial={{opacity: 0, y: 30}}
-                    whileInView={{opacity: 1, y: 0}}
-                    viewport={{once:  true}}
-                    transition={{duration: 0.8, delay: 0.2}}
-                >
-                    Ready to Book Your Session?
-                </motion.h1>
-                <Link to="/contact">
-                    <motion.button
-                        className="bg-[#080808] text-[#F5F0EA] px-4 py-3 hover:bg-[#1a1a1a] hover:translate-y-2 hover:border-2 hover:border-[#080808] transition-all duration-500 active:scale-110"
                         initial={{opacity: 0, y: 30}}
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{once: true}}
                         transition={{duration: 0.8, delay: 0.2}}
                     >
-                        Get In Touch
-                    </motion.button>
-                </Link>
-            </section>
-        </>
+                        ✦ What We Offer
+                    </motion.p>
+                    <motion.h1 
+                        className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-10"
+                        initial={{opacity: 0, y: 30}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true}}
+                        transition={{duration: 0.8, delay: 0.2}}
+                    >
+                        Our Services
+                    </motion.h1>
+                    <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {services.map((service, index) => (
+                            <motion.div 
+                                className="flex flex-col gap-4 bg-[#111111] p-8 border border-white/5 hover:border-[#C9A84C]/30 transition-all duration-300"
+                                key={service.id}
+                                initial={{opacity: 0, y: 30}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{duration: 0.8, delay: 0.3 + index * 0.1}}
+                            >
+                                <div>{service.icon}</div>
+                                <h1 className="text-xl text-[#F5F0EA] font-display">{service.title}</h1>
+                                <p className="text-sm text-[#888888] font-body leading-relaxed">{service.description}</p>
+                                <ul className="flex flex-col gap-2">
+                                    {service.features.map((feature, index) => (
+                                        <motion.li 
+                                            key={index}
+                                            className="text-lg text-[#888888] font-mono"
+                                            initial={{opacity: 0, y: 20}}
+                                            whileInView={{opacity: 1, y: 0}}
+                                            viewport={{once: true}}
+                                            transition={{duration: 0.8, delay: 0.3}}
+                                        >
+                                            <span className="text-[#C9A84C] mr-3"> ✓</span>{feature}
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+
+                    <motion.div className="mt-24 mb-12">
+                        <motion.p 
+                            className="text-[#C9A84C] font-mono text-sm uppercase"
+                            whileInView={{opacity: 1, y: 0}}
+                            initial={{opacity: 0, y: 30}}
+                            transition={{duration: 0.8, delay: 0.2}}
+                        >
+                            ✦ How We Work
+                        </motion.p>
+                        <motion.h1 
+                            className="font-display text-4xl md:text-5xl text-[#F5F0EA] mt-4 mb-10"
+                            whileInView={{opacity: 1, y: 0}}
+                            initial={{opacity: 0, y: 30}}
+                            transition={{duration: 0.8, delay: 0.2}}
+                        >
+                            Our Process
+                        </motion.h1>
+                    </motion.div>
+                    <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        {steps.map((step, index) => (
+                            <motion.div
+                                key={index}
+                                className="flex flex-col gap-4 p-8 border-t border-[#C9A84C]/30 pt-6 transition-all duration-300"
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.3}}
+                            >
+                                <h1 className="text-4xl md:text-5xl font-display text-[#C9A84C]">{step.number}</h1>
+                                <h2 className="text-xl text-[#F5F0EA] font-display">{step.title}</h2>
+                                <p className="text-sm text-[#888888] font-body leading-relaxed">{step.description}</p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </section>
+                <section className="w-full px-6 md:px-12 lg:px-20 py-24 bg-[#C9A84C] flex flex-col items-start justify-center gap-4">
+                    <motion.div>
+                        <motion.p 
+                            className="text-[#080808] font-mono text-sm uppercase tracking-widest"
+                            initial={{opacity: 0, y: 30}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once: true}}
+                            transition={{duration: 0.8, delay: 0.2}}
+                        >
+                            ✦ Contact us today for a custom quote tailored to your needs
+                        </motion.p>
+                        <motion.h1 
+                            className="font-display text-4xl md:text-5xl text-[#080808]"
+                            initial={{opacity: 0, y: 30}}
+                            whileInView={{opacity: 1, y: 0}}
+                            viewport={{once:  true}}
+                            transition={{duration: 0.8, delay: 0.2}}
+                        >
+                            Ready to Book Your Session?
+                        </motion.h1>
+                    </motion.div>
+                    <motion.div>
+                        <Link to="/contact">
+                            <motion.button
+                                className="h-[50%] bg-[#080808] text-[#F5F0EA] text-sm md:text-xl px-4 py-3 hover:bg-[#1a1a1a]/30 active:translate-y-2  transition-all duration-300"
+                                initial={{opacity: 0, y: 10}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{duration: 0.8, delay: 0.2}}
+                            >
+                                Get In Touch
+                            </motion.button>
+                        </Link>
+                    </motion.div>
+                </section>
+            </>
+        </motion.div>
     )
 }

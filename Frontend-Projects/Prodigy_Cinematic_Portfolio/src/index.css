@@ -29,6 +29,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  * {
+    cursor: none !important;
+  }
+
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: #080808; }
   ::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 2px; }
