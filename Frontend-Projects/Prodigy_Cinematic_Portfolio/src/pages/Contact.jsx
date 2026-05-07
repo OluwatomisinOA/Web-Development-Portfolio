@@ -23,8 +23,18 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         emailjs.sendForm(
-            
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            formRef.current,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
+        .then(() => {
+            alert('Message sent successfully!')
+            setFormData({name: '', email: '', service: '', message: ''})
+        })
+        .catch(() => {
+            alert('Something went wrong. Please try again.')
+        })
     }
     
     return (
@@ -73,8 +83,45 @@ export default function Contact() {
                         </div>
                         <div className="border-t border-white/30 my-6"></div>
                         <ul className="flex justify-around items-center gap-6">
-                            <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaInstagram size={20} /></a></li>
-                            <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaInstagram size={20} /></a></li>
+                            <li className="relative group flex flex-col items-center">
+                                <a 
+                                    href="https://www.instagram.com/prodigyvisuals.studios?igsh=ZDNyeXNubHRweDNz" 
+                                    target="_blank" 
+                                    rel="noreferrer" 
+                                    className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"
+                                >
+                                    <FaInstagram size={20}/>
+                                </a>
+                                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#111111] border border-white/10 text-[#C9A84C] font-mono text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    @prodigyvisuals.studios
+                                </span>
+                            </li>
+                            <li className="relative group flex flex-col items-center">
+                                <a 
+                                    href="https://www.instagram.com/prodigyvisuals.weddings?igsh=MXYybnhsOG9yY2Fn" 
+                                    target="_blank" 
+                                    rel="noreferrer" 
+                                    className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"
+                                >
+                                    <FaInstagram size={20}/>
+                                </a>
+                                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#111111] border border-white/10 text-[#C9A84C] font-mono text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    @prodigyvisuals.weddings
+                                </span>
+                            </li>
+                            <li className="relative group flex flex-col items-center">
+                                <a 
+                                    href="https://www.instagram.com/prodigyvisuals?igsh=cGlvaXptaWNmemx0" 
+                                    target="_blank" 
+                                    rel="noreferrer" 
+                                    className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"
+                                >
+                                    <FaInstagram size={20}/>
+                                </a>
+                                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#111111] border border-white/10 text-[#C9A84C] font-mono text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    @prodigyvisuals
+                                </span>
+                            </li>
                         </ul>
                     </div>
                     <div>

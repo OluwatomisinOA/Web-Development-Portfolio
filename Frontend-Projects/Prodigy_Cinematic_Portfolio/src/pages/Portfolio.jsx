@@ -6,6 +6,8 @@ import MasonryGrid from "../components/portfolio/MasonryGrid";
 import LightBox from "../components/portfolio/LightBox";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import { FaInstagram } from "react-icons/fa6";
+import { href } from "react-router-dom";
 
 export default function Portfolio() {
 
@@ -33,6 +35,12 @@ export default function Portfolio() {
             setLightBoxIndex(i => i - 1)
         }
     }
+
+    const socials = [
+        { handle: '@prodigyvisuals.studios', href: 'https://www.instagram.com/prodigyvisuals.studios?igsh=ZDNyeXNubHRweDNz'},
+        { handle: '@prodigyvisuals.weddings', href: 'https://www.instagram.com/prodigyvisuals.weddings?igsh=MXYybnhsOG9yY2Fn'},
+        { handle: '@prodigyvisuals', href: 'https://www.instagram.com/prodigyvisuals?igsh=cGlvaXptaWNmemx0'}
+    ]
 
     return (
         <motion.div
@@ -98,6 +106,28 @@ export default function Portfolio() {
                             onPrev={handlePrev}
                         />
                     }
+                </section>
+                <section className="px-6 md:px-12 lg:px-20 py-16 bg-[#080808] flex flex-col items-center gap-4 border-t border-white/10 ">
+                    <p className="font-mono text-xs text-[#888888] uppercase tracking-widest">
+                        Want to see more?
+                    </p>
+                    <h2 className="font-display text-xl md:text-2xl text-[#F5F0EA]">
+                        Check Out More Work On Instagram
+                    </h2>
+                    <div className="flex flex-col md:flex-row gap-4 mt-2">
+                        {socials.map((social) => (
+                            <a
+                                key={social.handle}
+                                href={social.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="w-82 flex items-center justify-center gap-3 border border-[#C9A84C] text-[#C9A84C] px-8 py-3 font-mono text-sm tracking-widest uppercase hover:bg-[#C9A84C] hover:text-[#080808] transition-all duration-300"
+                            >
+                                <FaInstagram />
+                                {social.handle}
+                            </a>
+                        ))}
+                    </div>
                 </section>
             </>
         </motion.div>

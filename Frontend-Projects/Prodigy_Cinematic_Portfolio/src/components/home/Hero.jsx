@@ -15,6 +15,16 @@ export default function Hero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent"></div>
             <div className="z-10 absolute inset-0 flex flex-col justify-center px-6 md:px-12 lg:px-20 gap-6">
+                <div className="flex items-center gap-2">
+                    <motion.div 
+                        className="w-2 h-2 rounded-full bg-green-400"
+                        animate={{scale: [1, 1.5, 1], opacity: [1, 0.5, 1]}}
+                        transition={{ duration: 1.5, repeat: Infinity}}
+                    />
+                    <p className="font-mono text-xs text-[#888888]/120 tracking-widest uppercase">
+                        Currently Accepting Bookings
+                    </p>
+                </div>
                 <motion.p 
                     initial={{opacity: 0, y: 20}}
                     animate={{opacity: 1, y: 0}} 

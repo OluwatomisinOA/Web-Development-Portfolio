@@ -36,7 +36,7 @@ export default function Navbar() {
             <ul className="hidden md:flex items-center gap-5">
                 {links.map((link) => (
                     <li key={link.href}>
-                        <Link to={link.href} className="p-3 font-body text-sm tracking-widest uppercase text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200">{link.label}</Link>
+                        <Link to={link.href} className={`p-3 font-body text-sm tracking-widest uppercase text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200 ${location.pathname === link.href ? 'text-[#F5F0EA]' : 'text-[#888888] hover:text-[#F5F0EA]'}`}>{link.label}</Link>
                     </li>
                 ))}
             </ul>

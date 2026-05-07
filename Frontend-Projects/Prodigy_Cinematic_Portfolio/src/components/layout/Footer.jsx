@@ -24,8 +24,45 @@ export default function Footer() {
                 }
             </ul>
             <ul className="flex justify-between items-center gap-6">
-                <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaInstagram size={20} /></a></li>
-                <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"><FaInstagram size={20} /></a></li>
+                <li className="relative group flex flex-col items-center">
+                    <a 
+                        href="https://www.instagram.com/prodigyvisuals.studios?igsh=ZDNyeXNubHRweDNz" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"
+                    >
+                        <FaInstagram size={20}/>
+                    </a>
+                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#111111] border border-white/10 text-[#C9A84C] font-mono text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        @prodigyvisuals.studios
+                    </span>
+                </li>
+                <li className="relative group flex flex-col items-center">
+                    <a 
+                        href="https://www.instagram.com/prodigyvisuals.weddings?igsh=MXYybnhsOG9yY2Fn" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"
+                    >
+                        <FaInstagram size={20}/>
+                    </a>
+                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#111111] border border-white/10 text-[#C9A84C] font-mono text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        @prodigyvisuals.weddings
+                    </span>
+                </li>
+                <li className="relative group flex flex-col items-center">
+                    <a 
+                        href="https://www.instagram.com/prodigyvisuals?igsh=cGlvaXptaWNmemx0" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-[#888888] hover:text-[#F5F0EA] transition-colors duration-200"
+                    >
+                        <FaInstagram size={20}/>
+                    </a>
+                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#111111] border border-white/10 text-[#C9A84C] font-mono text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        @prodigyvisuals
+                    </span>
+                </li>
             </ul>
             <p className="text-sm text-[#888888]">© {year} Prodigy Visuals. All rights reserved.</p>
         </footer>

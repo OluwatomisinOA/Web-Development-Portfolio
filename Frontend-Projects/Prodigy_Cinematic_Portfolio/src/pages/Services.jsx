@@ -186,7 +186,7 @@ export default function Services() {
                     <motion.div>
                         <Link to="/contact">
                             <motion.button
-                                className="h-[50%] bg-[#080808] text-[#F5F0EA] text-sm md:text-xl px-4 py-3 hover:bg-[#1a1a1a]/30 active:translate-y-2  transition-all duration-300"
+                                className="h-[50%] bg-[#080808] text-[#F5F0EA] font-body text-sm md:text-xl px-4 py-3 hover:bg-[#1a1a1a]/30 active:translate-y-2  transition-all duration-300"
                                 initial={{opacity: 0, y: 10}}
                                 whileInView={{opacity: 1, y: 0}}
                                 viewport={{once: true}}
