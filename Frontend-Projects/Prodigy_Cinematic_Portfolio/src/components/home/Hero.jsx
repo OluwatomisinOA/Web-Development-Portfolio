@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import herobg from "../../assets/images/Sproject5.mp4";
+import herobg from "/images/Sproject5.mp4";
 
 export default function Hero() {
 
