@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import pic from "../../assets/images/profile_pic.jpg"
+import pic from "/images/profile_pic.jpg"
 
 export default function AboutTeaser() {
     return (

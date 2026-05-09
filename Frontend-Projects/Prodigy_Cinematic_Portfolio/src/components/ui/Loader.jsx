@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "../../assets/images/prodigy_logo.png";
+import logo from "/images/prodigy_logo.png";
 
 export default function Loader() {
     return (

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pic from "../../assets/images/profile_pic.jpg"
+import pic from "/images/profile_pic.jpg"
 
 export default function Bio() {
     return (
